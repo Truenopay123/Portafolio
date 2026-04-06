@@ -1,373 +1,699 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-position="midfielder" data-lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portafolio - Bryan Axel Cortes Cortes</title>
-
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-  <script src="https://kit.fontawesome.com/4b9d56e1e3.js" crossorigin="anonymous" integrity="sha384-..." defer></script> <!-- Added integrity and defer for reliability -->
-
-  <!-- Styles & App -->
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bryan Axel Cortes Cortes | Match Day Portfolio</title>
+  <meta name="description" content="Portfolio de Bryan Axel Cortes Cortes — Full-Stack Developer desde Santiago de Querétaro, QRO, México." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
 </head>
 <body>
-  <!-- Partículas fondo -->
-  <canvas id="bg-particles" aria-hidden="true"></canvas>
 
-  <!-- Header -->
-  <header class="nav">
-    <div class="nav__inner">
-      <a class="brand" href="#">
-        <span class="brand__logo">BA</span>
-        <span class="brand__name">Bryan <strong>Axel</strong></span>
-      </a>
+  <!-- ═══════════ ONBOARDING SCREEN ═══════════ -->
+  <div id="onboarding" class="onboarding">
+    <div class="onboarding__crowd-wave">
+      <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+      <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+      <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+      <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+      <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+      <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+      <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+      <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+      <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+      <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+    </div>
 
-      <nav class="menu">
-        <a href="#perfil" data-key="menuPerfil">Perfil</a>
-        <a href="#experiencia" data-key="menuExperiencia">Experiencia</a>
-        <a href="#habilidades" data-key="menuHabilidades">Habilidades</a>
-        <a href="#educacion" data-key="menuEducacion">Educación</a>
-        <a href="#proyectos" data-key="menuProyectos">Proyectos</a>
-        <a href="#contacto" data-key="menuContacto">Contacto</a>
+    <div class="onboarding__content">
+      <h1 class="matchday-title">MATCH DAY</h1>
+      <p class="matchday-subtitle">BRYAN AXEL FC</p>
+      <p class="matchday-sub" data-i18n="matchday_sub">Tu asiento de primera fila a mi carrera</p>
+
+      <!-- Language Toggle -->
+      <div class="onboarding__lang">
+        <button class="lang-btn" data-lang-select="en">ENGLISH</button>
+        <span class="lang-divider">|</span>
+        <button class="lang-btn active" data-lang-select="es">ESPAÑOL</button>
+      </div>
+
+      <!-- Position Select -->
+      <div class="onboarding__position">
+        <p class="section-label" data-i18n="select_position">SELECCIONA TU POSICIÓN</p>
+        <div class="position-options">
+          <button class="position-btn" data-position="goalkeeper">
+            <span class="position-icon">🧤</span>
+            <span class="position-name" data-i18n="pos_gk">Portero</span>
+            <span class="position-desc" data-i18n="pos_gk_desc">Backend · Confiable</span>
+          </button>
+          <button class="position-btn active" data-position="midfielder">
+            <span class="position-icon">⚡</span>
+            <span class="position-name" data-i18n="pos_mid">Mediocampista</span>
+            <span class="position-desc" data-i18n="pos_mid_desc">Full-Stack · Versátil</span>
+          </button>
+          <button class="position-btn" data-position="striker">
+            <span class="position-icon">🔥</span>
+            <span class="position-name" data-i18n="pos_st">Delantero</span>
+            <span class="position-desc" data-i18n="pos_st_desc">Mobile/Frontend · Ofensivo</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Kit Color Picker -->
+      <div class="onboarding__kit">
+        <p class="section-label" data-i18n="select_kit">COLOR DE EQUIPACIÓN</p>
+        <div class="kit-swatches">
+          <button class="kit-swatch active" data-kit="champions" style="--sw:#F5C842" title="Champions Gold"></button>
+          <button class="kit-swatch" data-kit="manchester" style="--sw:#EF4444" title="Manchester Red"></button>
+          <button class="kit-swatch" data-kit="city" style="--sw:#38BDF8" title="City Sky"></button>
+          <button class="kit-swatch" data-kit="madrid" style="--sw:#A855F7" title="Madrid Purple"></button>
+          <button class="kit-swatch" data-kit="tigres" style="--sw:#FB923C" title="Tigres Orange"></button>
+          <button class="kit-swatch" data-kit="celtic" style="--sw:#34D399" title="Celtic Green"></button>
+        </div>
+      </div>
+
+      <!-- Kick Off Button -->
+      <button id="kickoff-btn" class="kickoff-btn" data-i18n="kickoff">SAQUE INICIAL →</button>
+    </div>
+  </div>
+
+  <!-- ═══════════ STADIUM GATE TRANSITION ═══════════ -->
+  <div id="stadium-gate" class="stadium-gate">
+    <div class="gate-left"></div>
+    <div class="gate-right"></div>
+    <div class="gate-light"></div>
+  </div>
+
+  <!-- ═══════════ OS WINDOW WRAPPER ═══════════ -->
+  <div id="os-wrapper" class="os-wrapper hidden">
+    <div class="os-chrome" id="os-chrome">
+      <div class="os-chrome__dots">
+        <span class="dot dot--red"></span>
+        <span class="dot dot--yellow"></span>
+        <span class="dot dot--green"></span>
+      </div>
+      <span class="os-chrome__title" id="os-title">Portfolio.exe</span>
+      <div class="os-chrome__spacer"></div>
+    </div>
+
+    <!-- ═══════════ MAIN SITE ═══════════ -->
+    <main id="main-site" class="main-site">
+
+      <!-- TOP BAR (Scoreboard) -->
+      <header class="topbar">
+        <div class="topbar__left">
+          <span class="topbar__tag">USR: <span data-i18n="visitor">visitante</span></span>
+          <span class="topbar__tag">ENV: matchday</span>
+          <span class="topbar__tag">AUTH: <span class="tag-verified">verified ✓</span></span>
+        </div>
+        <div class="topbar__ticker">
+          <div class="ticker-track" id="ticker-track">
+            <span class="ticker-item">⚽ 10 CUATRIMESTRES</span>
+            <span class="ticker-item">📂 6+ PROYECTOS ENTREGADOS</span>
+            <span class="ticker-item">💻 2+ AÑOS EXPERIENCIA</span>
+            <span class="ticker-item">🏆 FULL-STACK DEVELOPER</span>
+            <span class="ticker-item">📍 QUERÉTARO, QRO, MX</span>
+            <span class="ticker-item">⚽ 10 CUATRIMESTRES</span>
+            <span class="ticker-item">📂 6+ PROYECTOS ENTREGADOS</span>
+            <span class="ticker-item">💻 2+ AÑOS EXPERIENCIA</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- NAVBAR -->
+      <nav class="navbar" id="navbar">
+        <a href="#" class="navbar__brand">BACC<span class="accent-dot">.</span></a>
+        <div class="navbar__links">
+          <a href="#formaciones" class="nav-link" data-i18n="nav_formations">~/formaciones</a>
+          <a href="#squad" class="nav-link" data-i18n="nav_squad">~/squad</a>
+          <a href="#academia" class="nav-link" data-i18n="nav_academy">~/academia</a>
+          <a href="#stats" class="nav-link" data-i18n="nav_stats">~/stats</a>
+          <a href="CV Bryan Axel Cortes Cortes.pdf" class="btn-cv" download>
+            📄 CV_Bryan.pdf ↓
+          </a>
+          <a href="#contact" class="nav-link nav-link--cta" data-i18n="nav_contact">Contacto</a>
+        </div>
+        <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
 
-      <div class="controls">
-        <button id="themeToggle" class="icon-btn" aria-label="Cambiar tema" title="Tema">
-          <i class="fas fa-moon"></i>
-        </button>
-        <select id="langSelect" class="lang-select" aria-label="Idioma">
-          <option value="es">ES</option>
-          <option value="en">EN</option>
-        </select>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero" id="inicio" aria-label="Presentación">
-    <div class="hero__content glass">
-      <div class="avatar" aria-hidden="true">BA</div>
-      <h1 class="glow" data-key="heroTitle">Software Engineer</h1>
-      <p class="hero__subtitle" data-key="heroDesc">
-        Creando experiencias digitales sorprendentes con Web, Mobile & IoT
-      </p>
-      <div class="hero__cta">
-        <a href="#contacto" class="btn btn-primary" data-key="btnContacto">Contáctame</a>
-        <a href="Currículum Vitae Bryan Axel Cortes Cortes.pdf" class="btn btn-ghost" download data-key="btnCV">
-          <i class="fas fa-file-download"></i> Descargar CV
+      <!-- MOBILE MENU -->
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="#formaciones" class="mobile-link" data-i18n="nav_formations">~/formaciones</a>
+        <a href="#squad" class="mobile-link" data-i18n="nav_squad">~/squad</a>
+        <a href="#academia" class="mobile-link" data-i18n="nav_academy">~/academia</a>
+        <a href="#stats" class="mobile-link" data-i18n="nav_stats">~/stats</a>
+        <a href="CV Bryan Axel Cortes Cortes.pdf" class="btn-cv" download>
+          📄 CV_Bryan.pdf ↓
         </a>
-      </div>
-      <div class="hero__badges">
-        <span class="badge">Web</span>
-        <span class="badge">Mobile</span>
-        <span class="badge">APIs</span>
-        <span class="badge">IoT</span>
-      </div>
-    </div>
-    <div class="floating-orb orb-1"></div>
-    <div class="floating-orb orb-2"></div>
-    <div class="floating-orb orb-3"></div>
-  </section>
-
-  <!-- Perfil -->
-  <section id="perfil" class="section">
-    <div class="section__head">
-      <h2 data-key="perfilTitle">Perfil Profesional</h2>
-      <p class="section__lead" data-key="perfilLead">
-        Enfocado en construir productos usables, escalables y con impacto real.
-      </p>
-    </div>
-
-    <div class="grid-2">
-      <div class="card tilt">
-        <h3><i class="fas fa-user-astronaut"></i> <span data-key="sobreMi">Sobre mí</span></h3>
-        <p data-key="perfilText">
-          Estudiante de Ingeniería en Desarrollo y Gestión de Software (9º cuatrimestre).
-          Experiencia en OOP, MVC, pruebas de API y despliegue. Trabajo con HTML, CSS,
-          JavaScript, PHP, Python, Java, Kotlin (básico) y Dart. Frameworks: React, Flask,
-          Flutter, Spring Boot, Angular y Bootstrap. Bases de datos SQL/NoSQL (MySQL,
-          PostgreSQL, SQL Server, SQLite, Firebase y MongoDB).
-        </p>
-      </div>
-      <div class="card tilt">
-        <h3><i class="fas fa-bolt"></i> <span data-key="fortalezas">Fortalezas</span></h3>
-        <ul class="pill-list">
-          <li>Leadership</li>
-          <li>Teamwork</li>
-          <li>Problem Solving</li>
-          <li>Communication</li>
-          <li>Adaptability</li>
-          <li>Continuous Improvement</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Experiencia -->
-  <section id="experiencia" class="section">
-    <div class="section__head">
-      <h2 data-key="expTitle">Experiencia</h2>
-      <p class="section__lead" data-key="expLead">Proyectos académicos y colaboraciones con impacto.</p>
-    </div>
-
-    <div class="cards">
-      <article class="card tilt">
-        <h3>MORENA · 2024</h3>
-        <p data-key="exp1">Aplicaciones móviles & web integradas con IoT para hipertensión.</p>
-      </article>
-      <article class="card tilt">
-        <h3>PT · 2024</h3>
-        <p data-key="exp2">Aplicación móvil y web para agilidad de servicios en el Distrito 4.</p>
-      </article>
-      <article class="card tilt">
-        <h3>UTEQ</h3>
-        <p data-key="exp3">Control de invernadero, APIs, e-commerce e IoT en tiempo real.</p>
-      </article>
-      <article class="card tilt">
-        <h3 data-key="exp4Title">Gestión de BD de Sistema Electoral</h3>
-        <p data-key="exp4">Cruce de tablas y administración de datos para mejorar inserción.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- Habilidades (con iconos de lenguajes) -->
-  <section id="habilidades" class="section">
-    <div class="section__head">
-      <h2 data-key="skillsTitle">Habilidades</h2>
-      <p class="section__lead" data-key="skillsLead">Stack sólido y versátil para construir extremo a extremo.</p>
-    </div>
-
-    <div class="skills-grid">
-      <!-- Lenguajes / Web core -->
-      <div class="skill chip" title="HTML5">
-        <i class="devicon-html5-plain colored"></i><span>HTML5</span>
-      </div>
-      <div class="skill chip" title="CSS3">
-        <i class="devicon-css3-plain colored"></i><span>CSS3</span>
-      </div>
-      <div class="skill chip" title="JavaScript">
-        <i class="devicon-javascript-plain colored"></i><span>JavaScript</span>
-      </div>
-      <div class="skill chip" title="TypeScript">
-        <i class="devicon-typescript-plain colored"></i><span>TypeScript</span>
+        <a href="#contact" class="mobile-link nav-link--cta" data-i18n="nav_contact">Contacto</a>
       </div>
 
-      <!-- Frontend frameworks -->
-      <div class="skill chip" title="React">
-        <i class="devicon-react-original colored"></i><span>React</span>
-      </div>
-      <div class="skill chip" title="Angular">
-        <i class="devicon-angularjs-plain colored"></i><span>Angular</span>
-      </div>
-      <div class="skill chip" title="Bootstrap">
-        <i class="devicon-bootstrap-plain colored"></i><span>Bootstrap</span>
-      </div>
+      <!-- COMMENTARY OVERLAY -->
+      <div class="commentary" id="commentary" aria-live="polite"></div>
 
-      <!-- Backend -->
-      <div class="skill chip" title="Node.js">
-        <i class="devicon-nodejs-plain colored"></i><span>Node.js</span>
-      </div>
-      <div class="skill chip" title="Flask">
-        <i class="devicon-flask-original"></i><span>Flask</span>
-      </div>
-      <div class="skill chip" title="Spring Boot">
-        <i class="devicon-spring-plain colored"></i><span>Spring Boot</span>
-      </div>
-      <div class="skill chip" title="CodeIgniter">
-        <i class="devicon-codeigniter-plain colored"></i><span>CodeIgniter</span>
-      </div>
-      <div class="skill chip" title="PHP">
-        <i class="devicon-php-plain colored"></i><span>PHP</span>
-      </div>
-      <div class="skill chip" title="Java">
-        <i class="devicon-java-plain colored"></i><span>Java</span>
-      </div>
-      <div class="skill chip" title="Python">
-        <i class="devicon-python-plain colored"></i><span>Python</span>
-      </div>
-      <div class="skill chip" title="Kotlin">
-        <i class="devicon-kotlin-plain colored"></i><span>Kotlin</span>
-      </div>
-      <div class="skill chip" title="Dart">
-        <i class="devicon-dart-plain colored"></i><span>Dart</span>
-      </div>
-
-      <!-- Mobile / Cross -->
-      <div class="skill chip" title="Flutter">
-        <i class="devicon-flutter-plain colored"></i><span>Flutter</span>
-      </div>
-      <div class="skill chip" title="Android">
-        <i class="devicon-android-plain colored"></i><span>Android</span>
-      </div>
-
-      <!-- DB -->
-      <div class="skill chip" title="MySQL">
-        <i class="devicon-mysql-plain colored"></i><span>MySQL</span>
-      </div>
-      <div class="skill chip" title="PostgreSQL">
-        <i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span>
-      </div>
-      <div class="skill chip" title="SQL Server">
-        <i class="devicon-microsoftsqlserver-plain colored"></i><span>SQL Server</span>
-      </div>
-      <div class="skill chip" title="SQLite">
-        <i class="devicon-sqlite-plain colored"></i><span>SQLite</span>
-      </div>
-      <div class="skill chip" title="MongoDB">
-        <i class="devicon-mongodb-plain colored"></i><span>MongoDB</span>
-      </div>
-      <div class="skill chip" title="Firebase">
-        <i class="devicon-firebase-plain colored"></i><span>Firebase</span>
-      </div>
-
-      <!-- Tools -->
-      <div class="skill chip" title="Git">
-        <i class="devicon-git-plain colored"></i><span>Git</span>
-      </div>
-      <div class="skill chip" title="Postman">
-        <i class="devicon-postman-plain colored"></i><span>Postman</span>
-      </div>
-      <div class="skill chip" title="Thunder Client">
-        <i class="fas fa-cloud"></i><span>Thunder Client</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Proyectos (tilt + hover reveal) -->
-  <section id="proyectos" class="section">
-    <div class="section__head">
-      <h2 data-key="projTitle">Proyectos Destacados</h2>
-      <p class="section__lead" data-key="projLead">Selección con enfoque en negocio, UX y performance.</p>
-    </div>
-
-    <div class="projects">
-      <a class="project tilt" href="#" aria-label="Control de Invernadero">
-        <div class="project__content">
-          <h3>Invernadero IoT</h3>
-          <p data-key="proj1">Riego, fumigación y predicción de plagas. Datos en tiempo real.</p>
-          <span class="tag">IoT</span><span class="tag">Web</span><span class="tag">API</span>
+      <!-- ── HERO SECTION ── -->
+      <section class="hero" id="hero">
+        <div class="hero__floodlight"></div>
+        <div class="hero__content">
+          <div class="hero__left">
+            <div class="hero__terminal" id="hero-terminal">
+              <div class="terminal-line" data-delay="0">
+                <span class="t-prompt">></span> <span class="t-cmd">Mounting CV payload...</span> <span class="t-ok">[OK]</span> <span class="t-cmd">CV_Bryan_Axel_Cortes_Cortes.pdf — ready to download</span>
+              </div>
+              <div class="terminal-line" data-delay="400">
+                <span class="t-prompt">$</span> <span class="t-cmd">Loading squad data...</span> <span class="t-ok">[OK]</span>
+              </div>
+              <div class="terminal-line" data-delay="1000">
+                <span class="t-prompt">$</span> <span class="t-cmd">Resolving tactical debt...</span> <span class="t-ok">[SUCCESS]</span>
+              </div>
+              <div class="terminal-line" data-delay="1600">
+                <span class="t-prompt">$</span> <span class="t-cmd">System ready. Awaiting instructions.</span>
+              </div>
+            </div>
+            <h1 class="hero__headline">
+              <span data-i18n="hero_headline">Construyo apps móviles, plataformas web y sistemas IoT.</span><span class="blink-cursor">_</span>
+            </h1>
+            <div class="hero__bio">
+              <p class="bio-comment">/* <span data-i18n="hero_bio">Estudiante de 10° cuatrimestre de Ingeniería de Software con experiencia real construyendo apps móviles y web, integrando APIs, gestionando bases de datos SQL &amp; NoSQL, y prototipando soluciones IoT. He entregado productos reales para partidos políticos, empresas e instituciones académicas. Convierto problemas complejos en código limpio y funcional.</span> */</p>
+            </div>
+            <p class="hero__sub" data-i18n="hero_sub">Full-Stack Developer · Mobile · IoT · Querétaro, MX</p>
+            <div class="hero__ctas">
+              <a href="#squad" class="btn btn--primary" data-i18n="cta_boot">./boot_squad →</a>
+              <a href="#formaciones" class="btn btn--outline" data-i18n="cta_log">git log --oneline</a>
+              <a href="CV Bryan Axel Cortes Cortes.pdf" class="btn-cv" download>
+                wget CV_Bryan.pdf ↓
+              </a>
+            </div>
+          </div>
+          <div class="hero__right">
+            <div class="player-card" id="player-card">
+              <div class="player-card__glow"></div>
+              <div class="player-card__inner">
+                <div class="player-card__rating">94</div>
+                <div class="player-card__position-badge" id="card-position">MID</div>
+                <div class="player-card__photo">
+                  <div class="photo-placeholder">BA</div>
+                </div>
+                <div class="player-card__name">Bryan Axel</div>
+                <div class="player-card__subtitle">Cortes Cortes</div>
+                <div class="player-card__role" data-i18n="card_role">Full-Stack Developer</div>
+                <div class="player-card__location">📍 Querétaro, QRO</div>
+                <div class="player-card__mini-stats">
+                  <div class="mini-stat"><span class="ms-val">90</span><span class="ms-label">PAC</span></div>
+                  <div class="mini-stat"><span class="ms-val">92</span><span class="ms-label">SHO</span></div>
+                  <div class="mini-stat"><span class="ms-val">85</span><span class="ms-label">PAS</span></div>
+                  <div class="mini-stat"><span class="ms-val">88</span><span class="ms-label">DRI</span></div>
+                  <div class="mini-stat"><span class="ms-val">87</span><span class="ms-label">DEF</span></div>
+                  <div class="mini-stat"><span class="ms-val">91</span><span class="ms-label">PHY</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </a>
+        <div class="pitch-lines pitch-lines--hero"></div>
+      </section>
 
-      <a class="project tilt" href="#" aria-label="E-commerce Admin">
-        <div class="project__content">
-          <h3>E-commerce Admin</h3>
-          <p data-key="proj2">Gestión administrativa, sucursales y clientes con dashboards.</p>
-          <span class="tag">React</span><span class="tag">Flask</span><span class="tag">SQL</span><span class="tag">Angular</span>
+      <!-- ── EXPERIENCE SECTION (~/formaciones) ── -->
+      <section class="section section--formations" id="formaciones">
+        <div class="section__header">
+          <span class="section__badge" data-i18n="sec_formations">~/formaciones</span>
+          <h2 class="section__title" data-i18n="formations_title">Formación Táctica</h2>
+          <p class="section__sub" data-i18n="formations_sub">Mi trayectoria profesional en formación de cancha</p>
         </div>
-      </a>
+        <div class="formation-pitch">
+          <svg class="formation-svg" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="780" height="580" fill="none" stroke="var(--pitch-line)" stroke-width="2" rx="4"/>
+            <line x1="400" y1="10" x2="400" y2="590" stroke="var(--pitch-line)" stroke-width="2"/>
+            <circle cx="400" cy="300" r="80" fill="none" stroke="var(--pitch-line)" stroke-width="2"/>
+            <circle cx="400" cy="300" r="4" fill="var(--pitch-line)"/>
+            <rect x="10" y="180" width="130" height="240" fill="none" stroke="var(--pitch-line)" stroke-width="2"/>
+            <rect x="660" y="180" width="130" height="240" fill="none" stroke="var(--pitch-line)" stroke-width="2"/>
+          </svg>
+          <div class="formation-nodes">
+            <!-- #1 Striker — most recent role -->
+            <div class="formation-node" data-role="st" style="top:12%;left:50%">
+              <div class="node-dot"></div>
+              <div class="node-label">1</div>
+              <div class="node-card">
+                <h4 data-i18n="exp1_title">Becario de Desarrollo Tecnológico</h4>
+                <p class="node-company">Frialsa — Querétaro</p>
+                <p class="node-date">Oct 2025 — <span data-i18n="present">Presente</span></p>
+                <p class="node-stack" data-i18n="exp1_stack">Logística de cadena de frío · Stack por definir</p>
+              </div>
+            </div>
+            <!-- #2 Left mid -->
+            <div class="formation-node" data-role="lm" style="top:40%;left:25%">
+              <div class="node-dot"></div>
+              <div class="node-label">2</div>
+              <div class="node-card">
+                <h4 data-i18n="exp2_title">Desarrollador Móvil &amp; Web</h4>
+                <p class="node-company">Partido Político PT — Querétaro</p>
+                <p class="node-date">Sep 2024 — Dic 2024</p>
+                <p class="node-stack" data-i18n="exp2_stack">App móvil + dashboard web para monitoreo de servicios distritales</p>
+              </div>
+            </div>
+            <!-- #3 Right mid -->
+            <div class="formation-node" data-role="rm" style="top:40%;left:75%">
+              <div class="node-dot"></div>
+              <div class="node-label">3</div>
+              <div class="node-card">
+                <h4 data-i18n="exp3_title">Desarrollador Móvil, Web &amp; IoT</h4>
+                <p class="node-company">UTEQ — Querétaro</p>
+                <p class="node-date">May 2024 — Sep 2024</p>
+                <p class="node-stack" data-i18n="exp3_stack">Flutter/Kotlin + web app + prototipo IoT para pacientes con hipertensión</p>
+              </div>
+            </div>
+            <!-- #4 Defender -->
+            <div class="formation-node" data-role="cb" style="top:70%;left:50%">
+              <div class="node-dot"></div>
+              <div class="node-label">4</div>
+              <div class="node-card">
+                <h4 data-i18n="exp4_title">Gestión de BD Electoral</h4>
+                <p class="node-company">MORENA — Querétaro</p>
+                <p class="node-date">May 2024</p>
+                <p class="node-stack" data-i18n="exp4_stack">SQL, cruce de bases de datos y administración de datos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <a class="project tilt" href="#" aria-label="Integración de Apps con APIs">
-        <div class="project__content">
-          <h3>Integración Apps</h3>
-          <p data-key="proj3">Comunicación fluida Mobile ↔ Web mediante APIs REST.</p>
-          <span class="tag">Mobile</span><span class="tag">Web</span><span class="tag">APIs</span>
+      <!-- ── PROJECTS SECTION (~/squad) ── -->
+      <section class="section section--squad" id="squad">
+        <div class="section__header">
+          <span class="section__badge" data-i18n="sec_squad">~/squad</span>
+          <h2 class="section__title" data-i18n="squad_title">El Equipo</h2>
+          <p class="section__sub" data-i18n="squad_sub">Proyectos desplegados como fichajes estrella</p>
         </div>
-      </a>
+        <div class="squad-grid">
+          <!-- Project 1 -->
+          <div class="transfer-card">
+            <div class="transfer-card__status transfer-card__status--active">ACTIVE</div>
+            <div class="transfer-card__header">
+              <h3 class="transfer-card__name" data-i18n="proj1_name">Plataforma de Asesorías con Microservicios</h3>
+              <div class="transfer-card__value">Sep — Dic 2025 · <span data-i18n="team5">Equipo de 5</span></div>
+            </div>
+            <div class="transfer-card__clubs">
+              <span class="club-tag">Microservices</span>
+              <span class="club-tag">REST APIs</span>
+              <span class="club-tag">Web App</span>
+            </div>
+            <div class="transfer-card__scout">
+              <p data-i18n="scout1">App web para solicitudes de tutorías académicas con roles de estudiantes, profesores y coordinadores. Arquitectura de microservicios.</p>
+            </div>
+          </div>
+          <!-- Project 2 -->
+          <div class="transfer-card">
+            <div class="transfer-card__status transfer-card__status--active">ACTIVE</div>
+            <div class="transfer-card__header">
+              <h3 class="transfer-card__name" data-i18n="proj2_name">PWA Monitoreo en Tiempo Real — DHT22</h3>
+              <div class="transfer-card__value">Sep — Dic 2025</div>
+            </div>
+            <div class="transfer-card__clubs">
+              <span class="club-tag">PWA</span>
+              <span class="club-tag">DHT22</span>
+              <span class="club-tag">IoT</span>
+              <span class="club-tag">Charts</span>
+            </div>
+            <div class="transfer-card__scout">
+              <p data-i18n="scout2">Dashboard de temperatura y humedad en tiempo real con gráficas interactivas y sensor DHT22.</p>
+            </div>
+          </div>
+          <!-- Project 3 -->
+          <div class="transfer-card">
+            <div class="transfer-card__status transfer-card__status--delivered">DELIVERED</div>
+            <div class="transfer-card__header">
+              <h3 class="transfer-card__name" data-i18n="proj3_name">App Móvil &amp; Web con APIs — PT Electoral</h3>
+              <div class="transfer-card__value">Sep — Dic 2024</div>
+            </div>
+            <div class="transfer-card__clubs">
+              <span class="club-tag">Mobile</span>
+              <span class="club-tag">Web</span>
+              <span class="club-tag">APIs</span>
+              <span class="club-tag">Distrito 4</span>
+            </div>
+            <div class="transfer-card__scout">
+              <p data-i18n="scout3">Integración móvil + web para servicios del distrito 4 del partido PT con gestión de datos en tiempo real.</p>
+            </div>
+          </div>
+          <!-- Project 4 -->
+          <div class="transfer-card">
+            <div class="transfer-card__status transfer-card__status--legacy">LEGACY</div>
+            <div class="transfer-card__header">
+              <h3 class="transfer-card__name" data-i18n="proj4_name">Sistema de Control de Invernadero IoT</h3>
+              <div class="transfer-card__value">Ene — Abr 2023</div>
+            </div>
+            <div class="transfer-card__clubs">
+              <span class="club-tag">IoT</span>
+              <span class="club-tag">Sensors</span>
+              <span class="club-tag">Web App</span>
+              <span class="club-tag">ML</span>
+            </div>
+            <div class="transfer-card__scout">
+              <p data-i18n="scout4">Web app + prototipo IoT para riego, fumigación y predicción de plagas con datos de sensores en tiempo real.</p>
+            </div>
+          </div>
+          <!-- Project 5 -->
+          <div class="transfer-card">
+            <div class="transfer-card__status transfer-card__status--legacy">LEGACY</div>
+            <div class="transfer-card__header">
+              <h3 class="transfer-card__name" data-i18n="proj5_name">App Web Gestión de Tareas Kanban</h3>
+              <div class="transfer-card__value">May — Ago 2023</div>
+            </div>
+            <div class="transfer-card__clubs">
+              <span class="club-tag">CRUD</span>
+              <span class="club-tag">Kanban</span>
+              <span class="club-tag">Web App</span>
+            </div>
+            <div class="transfer-card__scout">
+              <p data-i18n="scout5">Gestor de tareas Kanban con CRUD completo para gestión de proyectos personales y de equipo.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SKILLS SECTION (~/stats) ── -->
+      <section class="section section--stats" id="stats">
+        <div class="section__header">
+          <span class="section__badge" data-i18n="sec_stats">~/stats</span>
+          <h2 class="section__title" data-i18n="stats_title">Estadísticas del Jugador</h2>
+          <p class="section__sub" data-i18n="stats_sub">Métricas de rendimiento — análisis radar estilo FIFA</p>
+        </div>
+        <div class="stats-container">
+          <div class="stats-radar">
+            <canvas id="statsChart" width="450" height="450"></canvas>
+          </div>
+          <div class="stats-bars">
+            <div class="stat-bar-item" data-stat="90">
+              <div class="stat-bar-label"><span data-i18n="stat_pace">Velocidad</span> <span class="stat-detail" data-i18n="stat_pace_d">Integración de APIs &amp; rapidez</span></div>
+              <div class="stat-bar-track"><div class="stat-bar-fill" style="--target-width:90%"><span class="stat-bar-val">90</span></div></div>
+            </div>
+            <div class="stat-bar-item" data-stat="92">
+              <div class="stat-bar-label"><span data-i18n="stat_shooting">Disparo</span> <span class="stat-detail" data-i18n="stat_shooting_d">Full-Stack Execution</span></div>
+              <div class="stat-bar-track"><div class="stat-bar-fill" style="--target-width:92%"><span class="stat-bar-val">92</span></div></div>
+            </div>
+            <div class="stat-bar-item" data-stat="85">
+              <div class="stat-bar-label"><span data-i18n="stat_passing">Pases</span> <span class="stat-detail" data-i18n="stat_passing_d">Colaboración &amp; comunicación</span></div>
+              <div class="stat-bar-track"><div class="stat-bar-fill" style="--target-width:85%"><span class="stat-bar-val">85</span></div></div>
+            </div>
+            <div class="stat-bar-item" data-stat="88">
+              <div class="stat-bar-label"><span data-i18n="stat_dribbling">Regate</span> <span class="stat-detail" data-i18n="stat_dribbling_d">Resolución de problemas</span></div>
+              <div class="stat-bar-track"><div class="stat-bar-fill" style="--target-width:88%"><span class="stat-bar-val">88</span></div></div>
+            </div>
+            <div class="stat-bar-item" data-stat="87">
+              <div class="stat-bar-label"><span data-i18n="stat_defending">Defensa</span> <span class="stat-detail" data-i18n="stat_defending_d">DB Architecture</span></div>
+              <div class="stat-bar-track"><div class="stat-bar-fill" style="--target-width:87%"><span class="stat-bar-val">87</span></div></div>
+            </div>
+            <div class="stat-bar-item" data-stat="91">
+              <div class="stat-bar-label"><span data-i18n="stat_physical">Físico</span> <span class="stat-detail" data-i18n="stat_physical_d">IoT &amp; Docker Deployment</span></div>
+              <div class="stat-bar-track"><div class="stat-bar-fill" style="--target-width:91%"><span class="stat-bar-val">91</span></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TECH STACK BADGES -->
+        <div class="tech-stack">
+          <h3 class="tech-stack__title" data-i18n="tech_title">Números de Camiseta — Tech Stack</h3>
+          <div class="tech-stack__grid">
+            <div class="tech-stack__group">
+              <p class="tech-group-label" data-i18n="tech_lang">Lenguajes</p>
+              <div class="jersey-badges">
+                <span class="jersey-badge"><span class="jersey-num">10</span>HTML</span>
+                <span class="jersey-badge"><span class="jersey-num">7</span>CSS</span>
+                <span class="jersey-badge"><span class="jersey-num">9</span>JavaScript</span>
+                <span class="jersey-badge"><span class="jersey-num">8</span>PHP</span>
+                <span class="jersey-badge"><span class="jersey-num">5</span>Java</span>
+                <span class="jersey-badge"><span class="jersey-num">11</span>Python</span>
+                <span class="jersey-badge"><span class="jersey-num">6</span>Kotlin</span>
+                <span class="jersey-badge"><span class="jersey-num">4</span>C#</span>
+                <span class="jersey-badge"><span class="jersey-num">3</span>C++</span>
+                <span class="jersey-badge"><span class="jersey-num">14</span>Dart</span>
+              </div>
+            </div>
+            <div class="tech-stack__group">
+              <p class="tech-group-label">Frameworks</p>
+              <div class="jersey-badges">
+                <span class="jersey-badge"><span class="jersey-num">10</span>React</span>
+                <span class="jersey-badge"><span class="jersey-num">7</span>Flutter</span>
+                <span class="jersey-badge"><span class="jersey-num">9</span>Spring Boot</span>
+                <span class="jersey-badge"><span class="jersey-num">8</span>Angular</span>
+                <span class="jersey-badge"><span class="jersey-num">5</span>.NET</span>
+                <span class="jersey-badge"><span class="jersey-num">11</span>Flask</span>
+                <span class="jersey-badge"><span class="jersey-num">6</span>Bootstrap</span>
+                <span class="jersey-badge"><span class="jersey-num">4</span>ESP-IDF</span>
+              </div>
+            </div>
+            <div class="tech-stack__group">
+              <p class="tech-group-label" data-i18n="tech_db">Bases de Datos</p>
+              <div class="jersey-badges">
+                <span class="jersey-badge"><span class="jersey-num">1</span>PostgreSQL</span>
+                <span class="jersey-badge"><span class="jersey-num">13</span>MySQL</span>
+                <span class="jersey-badge"><span class="jersey-num">2</span>MSSQL</span>
+                <span class="jersey-badge"><span class="jersey-num">22</span>SQLite</span>
+                <span class="jersey-badge"><span class="jersey-num">99</span>Firebase</span>
+                <span class="jersey-badge"><span class="jersey-num">77</span>MongoDB</span>
+              </div>
+            </div>
+            <div class="tech-stack__group">
+              <p class="tech-group-label" data-i18n="tech_tools">Herramientas</p>
+              <div class="jersey-badges">
+                <span class="jersey-badge"><span class="jersey-num">🐳</span>Docker</span>
+                <span class="jersey-badge"><span class="jersey-num">📬</span>Postman</span>
+                <span class="jersey-badge"><span class="jersey-num">⚡</span>ThunderClient</span>
+                <span class="jersey-badge"><span class="jersey-num">🐙</span>GitHub</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LANGUAGES -->
+        <div class="languages-section">
+          <h3 class="languages-title" data-i18n="lang_title">Idiomas</h3>
+          <div class="language-bars">
+            <div class="lang-bar-item">
+              <div class="lang-bar-label"><span>Español</span><span class="lang-level" data-i18n="lang_native">Nativo</span></div>
+              <div class="stat-bar-track"><div class="stat-bar-fill lang-fill" style="--target-width:100%"><span class="stat-bar-val">100</span></div></div>
+            </div>
+            <div class="lang-bar-item">
+              <div class="lang-bar-label"><span>English</span><span class="lang-level">A1–A2</span></div>
+              <div class="stat-bar-track"><div class="stat-bar-fill lang-fill" style="--target-width:25%"><span class="stat-bar-val">25</span></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── EDUCATION & CERTS (~/academia) ── -->
+      <section class="section section--academy" id="academia">
+        <div class="section__header">
+          <span class="section__badge" data-i18n="sec_academy">~/academia</span>
+          <h2 class="section__title" data-i18n="academy_title">Academia Juvenil</h2>
+          <p class="section__sub" data-i18n="academy_sub">Línea temporal — del pitido inicial al final</p>
+        </div>
+        <div class="match-timeline">
+          <div class="timeline-track">
+            <div class="timeline-marker" style="--pos:5%">
+              <div class="marker-minute">0'</div>
+              <div class="marker-event goal-event">
+                <span class="event-icon">⚽</span>
+                <div class="event-content">
+                  <h4 data-i18n="edu1_t">Inicio Carrera Técnica</h4>
+                  <p data-i18n="edu1">El silbatazo inicial — comienza el partido de mi carrera</p>
+                  <span class="event-year">2022</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-marker" style="--pos:35%">
+              <div class="marker-minute">22'</div>
+              <div class="marker-event goal-event">
+                <span class="event-icon">⚽</span>
+                <div class="event-content">
+                  <h4 data-i18n="edu2_t">TSU Desarrollo de Software Multiplataforma</h4>
+                  <p data-i18n="edu2">UTEQ · Ene 2022 – Dic 2024 ✓ COMPLETADO</p>
+                  <span class="event-year">2022 — 2024</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-marker" style="--pos:75%">
+              <div class="marker-minute">70'</div>
+              <div class="marker-event goal-event">
+                <span class="event-icon">⚽</span>
+                <div class="event-content">
+                  <h4 data-i18n="edu3_t">Ing. Desarrollo y Gestión de Software</h4>
+                  <p data-i18n="edu3">UTEQ · Ene 2025 – Presente ⚽ EN PROGRESO</p>
+                  <span class="event-year">2025 — Presente</span>
+                </div>
+              </div>
+            </div>
+            <div class="timeline-marker" style="--pos:95%">
+              <div class="marker-minute">90'+</div>
+              <div class="marker-event goal-event">
+                <span class="event-icon">🏆</span>
+                <div class="event-content">
+                  <h4 data-i18n="edu4_t">El Partido Continúa</h4>
+                  <p data-i18n="edu4">Construyendo el futuro — el juego nunca para</p>
+                  <span class="event-year">2026</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline-line">
+            <div class="timeline-progress" id="timeline-progress"></div>
+          </div>
+          <div class="timeline-labels">
+            <span>0'</span><span>15'</span><span>30'</span><span>45'</span><span>60'</span><span>75'</span><span>90'+</span>
+          </div>
+        </div>
+
+        <!-- CERTIFICATIONS -->
+        <div class="certifications">
+          <h3 class="certs-title" data-i18n="certs_title">🟨 Trofeos — Certificaciones</h3>
+          <div class="certs-grid">
+            <div class="cert-card">
+              <span class="cert-icon">🟨</span>
+              <div class="cert-info">
+                <h4>Become a Rapid Developer</h4>
+                <p>Mendix Academy</p>
+              </div>
+            </div>
+            <div class="cert-card">
+              <span class="cert-icon">🟨</span>
+              <div class="cert-info">
+                <h4 data-i18n="cert2">Introducción a la Programación con Python</h4>
+                <p>Santander Open Academy</p>
+              </div>
+            </div>
+            <div class="cert-card">
+              <span class="cert-icon">🟨</span>
+              <div class="cert-info">
+                <h4 data-i18n="cert3">Certificado Inglés Nivel A1</h4>
+                <p data-i18n="cert3_org">Certificación de idioma</p>
+              </div>
+            </div>
+            <div class="cert-card">
+              <span class="cert-icon">🟨</span>
+              <div class="cert-info">
+                <h4 data-i18n="cert4">Crear Agentes de AI con Copilot Studio</h4>
+                <p>Microsoft</p>
+              </div>
+            </div>
+            <div class="cert-card">
+              <span class="cert-icon">🟨</span>
+              <div class="cert-info">
+                <h4>Power Apps y Power Automate</h4>
+                <p>Microsoft</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── CONTACT SECTION ── -->
+      <section class="section section--contact" id="contact">
+        <div class="section__header">
+          <span class="section__badge" data-i18n="sec_contact">~/contacto</span>
+          <h2 class="section__title" data-i18n="contact_title">Ventana de Fichajes</h2>
+          <p class="section__sub" data-i18n="contact_sub">Envía tu oferta — negociemos</p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <a href="mailto:bryanaxelcortescortes@gmail.com" class="contact-chip">
+            <span class="chip-icon">📧</span> bryanaxelcortescortes@gmail.com
+          </a>
+          <a href="tel:+524427747716" class="contact-chip">
+            <span class="chip-icon">📱</span> 442 774 7716
+          </a>
+          <a href="https://github.com/Truenopay123" target="_blank" rel="noopener noreferrer" class="contact-chip">
+            <span class="chip-icon">🐙</span> GitHub
+          </a>
+          <a href="https://linkedin.com/in/bryan-axel-cortes-cortes-b47566352" target="_blank" rel="noopener noreferrer" class="contact-chip">
+            <span class="chip-icon">💼</span> LinkedIn
+          </a>
+        </div>
+
+        <form class="transfer-form" id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="club-name" data-i18n="form_club">Club / Nombre de la Empresa</label>
+            <input type="text" id="club-name" name="club" placeholder="e.g. Google, Tu Startup, Freelance" required />
+          </div>
+          <div class="form-group">
+            <label for="project-type" data-i18n="form_project">Tipo de Proyecto</label>
+            <select id="project-type" name="project-type">
+              <option value="web" data-i18n="form_p1">Desarrollo Web</option>
+              <option value="mobile" data-i18n="form_p2">App Móvil</option>
+              <option value="fullstack" data-i18n="form_p3">Full-Stack</option>
+              <option value="iot" data-i18n="form_p4">IoT / Embedded</option>
+              <option value="other" data-i18n="form_p5">Otro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="budget" data-i18n="form_budget">Presupuesto (opcional)</label>
+            <select id="budget" name="budget">
+              <option value="tbd" data-i18n="form_b0">Por definir</option>
+              <option value="startup" data-i18n="form_b1">Startup</option>
+              <option value="mid" data-i18n="form_b2">Media Tabla</option>
+              <option value="champions" data-i18n="form_b3">Champions League</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="tu@empresa.com" required />
+          </div>
+          <div class="form-group form-group--full">
+            <label for="message" data-i18n="form_message">Mensaje al Desarrollador</label>
+            <textarea id="message" name="message" rows="5" placeholder="Cuéntame sobre el proyecto, el equipo y qué buscas..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--submit" data-i18n="form_submit">ENVIAR OFERTA →</button>
+          <div class="form-success hidden" id="form-success">
+            <span>⚽</span>
+            <p data-i18n="form_ok">¡Oferta recibida! Revisaré y responderé en 24 horas.</p>
+          </div>
+        </form>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer__content">
+          <p>© 2026 Bryan Axel Cortes Cortes — <span data-i18n="footer_text">Todos los derechos reservados. Hecho con pasión y código.</span></p>
+          <div class="footer__links">
+            <a href="https://github.com/Truenopay123" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/bryan-axel-cortes-cortes-b47566352" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://portafolio-seven-beta-26.vercel.app" target="_blank" rel="noopener noreferrer">Portfolio v1</a>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- ═══════════ SCROLL FOOTBALL PROGRESS ═══════════ -->
+  <div class="scroll-pitch" id="scroll-pitch">
+    <div class="scroll-pitch__field">
+      <div class="scroll-pitch__ball" id="scroll-ball">⚽</div>
+      <div class="scroll-pitch__line"></div>
     </div>
-  </section>
+  </div>
 
-  <!-- Proyectos Desplegados -->
-  <section id="desplegados" class="section deployed-section">
-    <div class="section__head">
-      <h2 data-key="liveTitle">Proyectos Desplegados</h2>
-      <p class="section__lead" data-key="liveLead">Explora mis proyectos en línea.</p>
+  <!-- ═══════════ EXIT BUTTON ═══════════ -->
+  <button class="exit-btn" id="exit-btn" title="Final Whistle">🔴 EXIT</button>
+
+  <!-- ═══════════ FINAL WHISTLE OVERLAY ═══════════ -->
+  <div class="final-whistle" id="final-whistle">
+    <div class="whistle-content">
+      <h2>FULL TIME</h2>
+      <p data-i18n="fulltime_msg">Gracias por ver el partido.</p>
+      <button class="btn btn--primary" id="restart-btn" data-i18n="restart">REPETIR PARTIDO →</button>
     </div>
-    <div class="deployed-projects">
-      <a class="deployed-project tilt" href="https://tasks-seguridad.vercel.app/" target="_blank" rel="noopener">
-        <div class="deployed-project__content">
-          <h3>Tasks Seguridad</h3>
-          <p>Gestión de tareas con seguridad.</p>
-          <i class="fas fa-arrow-right clickable-indicator" aria-label="Click to visit"></i>
-        </div>
-      </a>
-      <a class="deployed-project tilt" href="https://buscador-imagenes-ochre.vercel.app/" target="_blank" rel="noopener">
-        <div class="deployed-project__content">
-          <h3>Buscador de Imágenes</h3>
-          <p>Explora imágenes en tiempo real.</p>
-          <i class="fas fa-arrow-right clickable-indicator" aria-label="Click to visit"></i>
-        </div>
-      </a>
-      <a class="deployed-project tilt" href="https://bryan-emma-diego.vercel.app/" target="_blank" rel="noopener">
-        <div class="deployed-project__content">
-          <h3>Sistema de Alumnos</h3>
-          <p>Landing con estilo moderno.</p>
-          <i class="fas fa-arrow-right clickable-indicator" aria-label="Click to visit"></i>
-        </div>
-      </a>
-      <a class="deployed-project tilt" href="https://frontend-plantify.vercel.app/" target="_blank" rel="noopener">
-        <div class="deployed-project__content">
-          <h3>Plantify</h3>
-          <p>Monitoreo en tiempo real invernadero.</p>
-          <i class="fas fa-arrow-right clickable-indicator" aria-label="Click to visit"></i>
-        </div>
-      </a>
-    </div>
-  </section>
+  </div>
 
-  <!-- Educación -->
-  <section id="educacion" class="section">
-    <div class="section__head">
-      <h2 data-key="eduTitle">Educación</h2>
-    </div>
+  <!-- ═══════════ VAR FLASH ═══════════ -->
+  <div class="var-flash" id="var-flash"></div>
 
-    <div class="timeline">
-      <div class="timeline__item tilt">
-        <div class="timeline__dot"></div>
-        <div class="timeline__content card">
-          <h3><span data-key="eduIng">Ingeniería en Desarrollo y Gestión de Software</span> · UTEQ</h3>
-          <p>(2025 – Presente)</p>
-        </div>
-      </div>
-      <div class="timeline__item tilt">
-        <div class="timeline__dot"></div>
-        <div class="timeline__content card">
-          <h3><span data-key="eduTsu">TSU en Tecnologías de la Información</span> · UTEQ</h3>
-          <p>(2022 – 2024)</p>
-        </div>
-      </div>
-      <div class="timeline__item tilt">
-        <div class="timeline__dot"></div>
-        <div class="timeline__content card">
-          <h3 data-key="eduCert">Certificados</h3>
-          <p>Rapid Developer (Mendix), Python (Santander), Inglés A1</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contacto -->
-  <section id="contacto" class="section">
-    <div class="section__head">
-      <h2 data-key="contactTitle">Contacto</h2>
-      <p class="section__lead" data-key="contactLead">Abierto a colaboraciones, freelance y oportunidades.</p>
-    </div>
-
-    <div class="contact-cards">
-      <button class="contact-card tilt copy" data-copy="bryanaxelcortescortes@gmail.com">
-        <i class="fas fa-envelope"></i>
-        <span>bryanaxelcortescortes@gmail.com</span>
-      </button>
-      <button class="contact-card tilt copy" data-copy="+524427747716">
-        <i class="fas fa-phone"></i>
-        <span>(+52) 442 774 7716</span>
-      </button>
-      <a class="contact-card tilt" href="https://github.com/Truenopay123" target="_blank" rel="noopener">
-        <i class="fab fa-github"></i>
-        <span>github.com/Truenopay123</span>
-      </a>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>© <span id="year"></span> Bryan Axel Cortes Cortes — <span data-key="footerMsg">Construido con ♥ y café.</span></p>
-  </footer>
-
-  <!-- Toast -->
-  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="js/app.js"></script>
 </body>
 </html>
